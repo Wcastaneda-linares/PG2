@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-title>
+      <ion-icon name="paw-outline"></ion-icon> Mascotas en Adopción
+    </ion-title>
+  </ion-toolbar>
+  
+
+  <!-- Sección de Filtros -->
+  <ion-toolbar class="filter-toolbar">
+    <ion-item lines="none" class="filter-item">
+      <ion-label class="filter-label">Tipo de Mascota</ion-label>
+      <ion-select [(ngModel)]="filtroTipoMascota" (ionChange)="filtrarMascotas()" placeholder="Seleccionar tipo" interface="popover" class="filter-select">
+        <ion-select-option *ngFor="let tipo of tiposDeMascotas" [value]="tipo" class="filter-option">
+          {{ tipo }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <ion-list *ngIf="publicaciones && publicaciones.length > 0">
+    <ion-card *ngFor="let publicacion of publicaciones" class="card-transparente">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="4">
+            <ion-img [src]="publicacion.imagenURL || 'assets/default-avatar.png'" class="mascota-img"></ion-img>
+          </ion-col>
+
+          <ion-col size="12" size-md="8">
+            <ion-card-content>
+              <h2>{{ publicacion.nombreMascota }}</h2>
+              
+              <p><ion-icon name="paw-outline"></ion-icon><strong> Raza:</strong> {{ publicacion.razaMascota }}</p>
+              <p><ion-icon name="shapes-outline"></ion-icon><strong> Tipo:</strong> {{ publicacion.tipoMascota }}</p>
+              <p><ion-icon name="calendar-outline"></ion-icon><strong> Edad:</strong> {{ publicacion.edadMascota }} años</p>
+              <p><ion-icon name="male-female-outline"></ion-icon><strong> Sexo:</strong> {{ publicacion.sexoMascota }}</p>
+              <p><ion-icon name="happy-outline"></ion-icon><strong> Personalidad:</strong> {{ publicacion.personalidadMascota }}</p>
+              <p><ion-icon name="medkit-outline"></ion-icon><strong> Estado de salud:</strong> {{ publicacion.estadoSaludMascota }}</p>
+          
+              <p>
+                <ion-icon name="person-circle-outline"></ion-icon><strong> Donante:</strong> 
+                <span *ngIf="publicacion.centroId; else personaParticular">
+                  Centro de Adopción: {{ publicacion.nombreCentro }}
+                </span>
+                <ng-template #personaParticular>
+                  Persona Particular: <strong>{{ publicacion.nombreDonante }}</strong>
+                </ng-template>
+              </p>
+          
+              <p *ngIf="publicacion.centroId; else direccionParticular">
+                <ion-icon name="location-outline"></ion-icon><strong> Dirección: </strong> {{ publicacion.direccionCentro }}
+              </p>
+          
+              <p *ngIf="publicacion.centroId; else telefonoParticular">
+                <ion-icon name="call-outline"></ion-icon><strong> Teléfono: </strong> {{ publicacion.telefonoCentro }}
+              </p>
+              
+              <!-- Plantillas para persona particular -->
+              <ng-template #direccionParticular>
+                <p><ion-icon name="location-outline"></ion-icon><strong> Dirección: </strong> {{ publicacion.donante.direccion }}</p>
+              </ng-template>
+              
+              <ng-template #telefonoParticular>
+                <p><ion-icon name="call-outline"></ion-icon><strong> Teléfono: </strong> {{ publicacion.telefonoDonante }}</p>
+              </ng-template>
+          
+              <p><ion-icon name="heart-outline"></ion-icon><strong> Me gusta:</strong> {{ publicacion.likes?.length || 0 }}</p>
+            </ion-card-content>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-button expand="block" color="primary" (click)="mostrarInformacion(publicacion)">
+              <ion-icon name="eye-outline" slot="start"></ion-icon>
+              Ver más Opciones
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="!publicaciones || publicaciones.length === 0">
+    <ion-item>
+      <ion-label>No hay mascotas disponibles para donación en este momento.</ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="huellas-fondo"></div>
+</ion-content>

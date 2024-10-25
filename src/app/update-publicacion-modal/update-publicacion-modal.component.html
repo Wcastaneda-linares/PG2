@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="form-title">Actualizar datos Mascota</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <div class="form-container">
+    <ion-list>
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Información de la Mascota</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Nombre</ion-label>
+        <ion-input [(ngModel)]="publicacion.mascota.nombre" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Raza</ion-label>
+        <ion-input [(ngModel)]="publicacion.mascota.raza" class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Edad (años)</ion-label>
+        <ion-input type="number" [(ngModel)]="publicacion.mascota.edad" class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">Sexo</ion-label>
+        <ion-select [(ngModel)]="publicacion.mascota.sexo" class="select-field">
+          <ion-select-option value="Macho">Macho</ion-select-option>
+          <ion-select-option value="Hembra">Hembra</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">Tipo de Mascota</ion-label>
+        <ion-select [(ngModel)]="publicacion.mascota.tipo" class="select-field">
+          <ion-select-option value="Perro">Perro</ion-select-option>
+          <ion-select-option value="Gato">Gato</ion-select-option>
+          <ion-select-option value="Ave">Ave</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">Estado de Salud</ion-label>
+        <ion-select [(ngModel)]="publicacion.mascota.estadoSalud" class="select-field">
+          <ion-select-option value="Sano">Sano</ion-select-option>
+          <ion-select-option value="Enfermo">Enfermo</ion-select-option>
+          <ion-select-option value="Recuperación">En recuperación</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">Personalidad</ion-label>
+        <ion-select [(ngModel)]="publicacion.mascota.personalidad" multiple="true" class="select-field">
+          <ion-select-option value="Juguetón">Juguetón</ion-select-option>
+          <ion-select-option value="Amable">Amable</ion-select-option>
+          <ion-select-option value="Bravo">Bravo</ion-select-option>
+          <ion-select-option value="De buen humor">De buen humor</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="publicacion.mascota.descripcion" class="textarea-field"></ion-textarea>
+      </ion-item>
+
+      
+      <ion-footer>
+        <ion-toolbar class="footer-toolbar">
+          <ion-button expand="full" (click)="guardarCambios()" class="save-button">Guardar Cambios</ion-button>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-list>
+  </div>
+</ion-content>

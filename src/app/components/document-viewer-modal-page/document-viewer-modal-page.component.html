@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="form-title">Documento de Identificación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-background">
+  <div *ngIf="documentURLSanitizada" class="document-container">
+    <!-- Mostrar la imagen si es una imagen -->
+    <img *ngIf="esImagen()" [src]="documentURLSanitizada" alt="Documento de Identificación" 
+         class="document-img" />
+
+    <!-- Mostrar el PDF si es un archivo PDF -->
+    <iframe *ngIf="esPDF()" [src]="documentURLSanitizada" class="document-frame"></iframe>
+  </div>
+
+  <div *ngIf="!documentURLSanitizada" class="error-message">
+    <p>No se pudo cargar el documento.</p>
+  </div>
+</ion-content>

@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="form-title">Solicitud de Adopción</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <div class="form-container">
+    <ion-list>
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Información Personal</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Nombre completo</ion-label>
+        <ion-input [(ngModel)]="nombreCompleto" name="nombreCompleto" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Teléfono de contacto</ion-label>
+        <ion-input type="tel" [(ngModel)]="telefono" name="telefono" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">Dirección</ion-label>
+        <ion-input type="text" [(ngModel)]="direccion" name="direccion" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Información Familiar</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">¿Tiene familia?</ion-label>
+        <ion-select [(ngModel)]="tieneFamilia" name="tieneFamilia" class="select-field" required>
+          <ion-select-option value="si">Sí</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">¿Tiene hijos?</ion-label>
+        <ion-select [(ngModel)]="tieneHijos" name="tieneHijos" class="select-field" required>
+          <ion-select-option value="si">Sí</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Motivo de Adopción</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label position="floating" class="input-label">¿Por qué deseas adoptar?</ion-label>
+        <ion-textarea [(ngModel)]="motivoAdopcion" name="motivoAdopcion" class="textarea-field" required></ion-textarea>
+      </ion-item>
+
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Documento de Identificación</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label class="input-label">Subir Documento</ion-label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*,application/pdf" required class="file-input"/>
+        <span *ngIf="selectedFileName">{{ selectedFileName }}</span>
+        <span *ngIf="!selectedFileName" class="no-file">Sin archivo seleccionado</span>
+      </ion-item>
+
+      <ion-footer>
+        <ion-toolbar class="footer-toolbar">
+          <ion-button expand="full" [disabled]="isUploading" (click)="enviarSolicitud()" class="save-button">Enviar Solicitud</ion-button>
+        </ion-toolbar>
+        <ion-progress-bar *ngIf="isUploading" [value]="uploadProgress / 100"></ion-progress-bar>
+      </ion-footer>
+    </ion-list>
+  </div>
+</ion-content>

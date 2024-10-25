@@ -1,0 +1,82 @@
+.welcome-message {
+  font-size: 24px;
+  text-align: center;
+  color: var(--ion-color-primary);
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.welcome-subtext {
+  text-align: center;
+  color: var(--ion-text-color, #000);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.register-invite {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-invite ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  margin-left: 5px;
+  font-size: 14px;
+  --background: transparent; /* Asegúrate de que el fondo es transparente */
+  --color: var(--ion-color-primary); /* Utiliza el color primario para el texto del botón */
+  text-transform: none; /* Evita que el texto se transforme a mayúsculas */
+}
+
+
+.logo-container img {
+  width: 180px; /* o el ancho que desees */
+  height: 180px; /* asegúrate de que el alto y el ancho sean iguales para un círculo perfecto */
+  border-radius: 50%; /* esto creará el efecto de círculo */
+  object-fit: cover; /* esto asegurará que la imagen cubra el área del círculo sin estirarse */
+  display: flex; /* esto asegura que la imagen no tenga espacio extra alrededor */
+  margin: 0 auto; /* esto centrará la imagen si su contenedor es más ancho que la imagen */
+  border: 2px solid #ffffff; /* opcional: agrega un borde si lo deseas, cambia el color como prefieras */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* opcional: agrega una sombra suave si lo deseas */
+}
+
+
+.logo-container {
+  margin-bottom: 10px;
+}
+
+.login-card {
+  max-width: 600px; /* o el ancho que prefieras */
+  width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ejemplo de sombra para agregar profundidad */
+}
+
+.error-message {
+  color: red;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.error-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.invalid ion-input {
+  --highlight-color-invalid: #eb445a;
+}
+
+.invalid ion-item {
+  border-left: 3px solid #eb445a;
+}
+

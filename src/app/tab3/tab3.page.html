@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="person-circle-outline"></ion-icon> Perfil de Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+ 
+
+  <ion-list class="usuario">
+    <ion-item *ngIf="usuario?.name" class="profile-item">
+      <!-- Avatar pequeño con opción para cambiar la foto -->
+      <ion-avatar slot="start" (click)="onAvatarClick()" style="cursor: pointer;">
+        <img [src]="usuario?.photoURL || userPhoto" alt="Foto de perfil">
+      </ion-avatar>
+      
+      <ion-label>
+        <h2>{{ usuario.name }}</h2>
+        <p>{{ usuario.email }}</p>
+      </ion-label>
+    </ion-item>
+  
+    <!-- Botón para cambiar la foto de perfil -->
+    <ion-item class="ion-text-center">
+      <ion-button expand="block" (click)="fileInput.click()" color="primary" class="profile-button">
+        <ion-icon name="camera-outline" slot="start"></ion-icon>
+        Cambiar Foto de Perfil
+      </ion-button>
+      <!-- El campo de input de archivos que permanece oculto -->
+      <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" hidden>
+    </ion-item>
+    
+  </ion-list>
+  
+  
+  
+  
+  
+
+  <!-- Opciones del perfil -->
+  <ion-list>
+    <ion-item button (click)="cambiarContrasena()">
+      <ion-icon slot="start" name="key-outline"></ion-icon>
+      <ion-label>Cambiar Contraseña</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="isAdmin()" button (click)="abrirModal()">
+      <ion-icon slot="start" name="business-outline"></ion-icon>
+      <ion-label>Registrar hogar para animales</ion-label>
+    </ion-item>
+
+    <ion-item button (click)="toggleNotificaciones()">
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+      <ion-badge *ngIf="contadorNotificaciones > 0" color="primary" slot="end">
+        {{ contadorNotificaciones }}
+      </ion-badge>
+    </ion-item>
+
+    <!-- Lista desplegable de notificaciones -->
+    <ion-list *ngIf="mostrarNotificaciones">
+      <ion-item *ngFor="let notificacion of notificaciones">
+        <ion-label>
+          <h2>Notificación de Adopción</h2>
+          <pre class="mensaje-notificacion">{{ notificacion.mensaje }}</pre>
+          <p class="fecha-notificacion">{{ notificacion.fecha | date: 'medium' }}</p>
+        </ion-label>
+      </ion-item>      
+    </ion-list>
+
+    <ion-item *ngIf="isAdmin()" button (click)="toggleCentrosAdopcion()">
+      <ion-icon slot="start" name="business-outline"></ion-icon>
+      <ion-label>Hogares para animales</ion-label>
+    </ion-item>
+
+    <!-- Lista de Hogares para animales -->
+    <ion-list *ngIf="mostrarCentrosAdopcion && centrosAdopcion.length > 0">
+      <div class="centro-card" *ngFor="let centro of centrosAdopcion">
+        <ion-label>
+          <h3>{{ centro.nombre }}</h3>
+          <p *ngIf="centro.direccion">Dirección: {{ centro.direccion }}</p>
+          <p *ngIf="centro.telefono">Teléfono: {{ centro.telefono }}</p>
+          <p *ngIf="centro.correo">Email: {{ centro.correo }}</p>
+        </ion-label>
+        
+        <!-- Contenedor para los botones -->
+        <div class="botones-container">
+          <ion-button expand="block" color="tertiary" (click)="abrirModalActualizar(centro)">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            Actualizar
+          </ion-button>
+          <ion-button expand="block" color="danger" (click)="eliminarCentro(centro)">
+            <ion-icon name="trash-outline" slot="start"></ion-icon>
+            Borrar
+          </ion-button>
+        </div>
+      </div>
+    </ion-list>    
+
+    <ion-item button color="danger" (click)="confirmLogout()">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar Sesión</ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+    <ion-item>
+    </ion-item>
+    <div class="huellas-fondo"></div>
+</ion-content>

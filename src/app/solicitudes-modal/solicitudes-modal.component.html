@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles de la Solicitud</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="solicitud-card">
+    <ion-card-content>
+      <div class="solicitud-info">
+        <p><strong>Mascota:</strong> {{ solicitud.nombreMascota || 'Desconocido' }}</p>
+        <p><strong>Solicitante:</strong> {{ solicitud.nombreCompleto || 'Usuario desconocido' }}</p>
+        <p><strong>Email:</strong> {{ solicitud.nombreUsuarioSolicitante || 'Usuario desconocido' }}</p>
+        <p><strong>Teléfono:</strong> {{ solicitud.telefono || 'No proporcionado' }}</p>
+        <p><strong>Dirección:</strong> {{ solicitud.direccion || 'No proporcionada' }}</p>
+        <p><strong>Motivo de Adopción:</strong> {{ solicitud.motivoAdopcion || 'No proporcionado' }}</p>
+        <p><strong>Tiene Familia:</strong> {{ solicitud.tieneFamilia || 'No proporcionado' }}</p>
+        <p><strong>Tiene Hijos:</strong> {{ solicitud.tieneHijos || 'No proporcionado' }}</p>
+        <p><strong>Fecha de Solicitud:</strong> {{ solicitud.fecha?.toDate() | date: 'medium' }}</p>
+        <p><strong>Estado:</strong> {{ solicitud.estado || 'Pendiente' }}</p>
+      </div>
+
+      <ion-button *ngIf="solicitud.identificacionURL" (click)="abrirDocumento(solicitud.identificacionURL)" expand="block">
+        <ion-icon name="eye-outline" slot="start"></ion-icon>
+        Ver Identificación
+      </ion-button>
+      
+
+      <div *ngIf="!solicitud.identificacionURL">
+        <p class="no-document">No se proporcionó un documento de identificación.</p>
+      </div>
+
+
+      <div class="botones-container">
+        <ion-button fill="outline" color="success" (click)="aprobarSolicitud(solicitud)">
+          <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+          Aprobar
+        </ion-button>
+        <ion-button fill="outline" color="danger" (click)="rechazarSolicitud(solicitud)">
+          <ion-icon name="close-outline" slot="start"></ion-icon>
+          Rechazar
+        </ion-button>
+      </div>
+      
+
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,71 @@
+.welcome-message {
+  font-size: 24px;
+  text-align: center;
+  color: var(--ion-color-primary);
+  margin-top: 20px; /* Ajustado para más espacio arriba */
+  margin-bottom: 10px;
+}
+
+.welcome-subtext {
+  text-align: center;
+  color: var(--ion-text-color, #000);
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+.register-invite {
+  text-align: center;
+  margin-top: 20px; /* Consistente con el margen superior del mensaje de bienvenida */
+  font-size: 14px;
+}
+
+.register-invite ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  margin-left: 5px;
+  font-size: 14px;
+  --background: transparent;
+  --color: var(--ion-color-primary);
+  text-transform: none;
+}
+
+.logo-container img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block; /* Asegurando que la imagen esté centrada correctamente */
+  margin: 0 auto; /* Centrado horizontal */
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-card {
+  max-width: 600px; /* o el ancho que prefieras */
+  width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ejemplo de sombra para agregar profundidad */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin: 5px 0 15px 0;
+}
+
+.firebase-error {
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}
+
+

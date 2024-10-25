@@ -1,0 +1,192 @@
+/* Estilo para el fondo personalizado */
+.custom-background {
+  --background: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-functional-dog-food-promotion-main-map-image_144794.jpg') no-repeat center center/cover;
+  background-color: #ffeb99; /* Un color amarillo suave */
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-functional-dog-food-promotion-main-map-image_144794.jpg'); /* Imagen de huellas en el fondo */
+  background-size: cover;
+  background-position: center;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+
+.welcome-text {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+
+ion-avatar img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Resaltado y animación en el botón "PUBLICAR" */
+.animated-button {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-button:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+}
+
+/* Sombra en la tarjeta de la mascota */
+.card-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 80px;
+}
+
+.huellas-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca las huellas detrás del contenido */
+  background-image: 
+    url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), /* Repetición de huella1 */
+    url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), /* Repetición de huella2 */
+    url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'); /* Repetición de huella3 */
+  
+  /* Posiciones para cada huella */
+  background-position: 
+    10% 20%, 30% 40%, 70% 80%, /* Posiciones de huella1 */
+    50% 30%, 80% 60%, 20% 80%, /* Posiciones de huella2 */
+    40% 10%, 60% 20%, 90% 90%; /* Posiciones de huella3 */
+
+  background-repeat: no-repeat;
+  
+  /* Tamaños variables para cada huella */
+  background-size: 
+    80px, 90px, 100px, /* Tamaños para huella1 */
+    70px, 80px, 90px, /* Tamaños para huella2 */
+    60px, 70px, 80px; /* Tamaños para huella3 */
+  
+  opacity: 0.4; /* Reduce la opacidad para hacerlas más sutiles */
+  animation: huellas-movimiento 20s infinite alternate;
+}
+
+@keyframes huellas-movimiento {
+  0% {
+    background-position: 
+      10% 20%, 30% 40%, 70% 80%, /* Inicial para huella1 */
+      50% 30%, 80% 60%, 20% 80%, /* Inicial para huella2 */
+      40% 10%, 60% 20%, 90% 90%; /* Inicial para huella3 */
+  }
+  100% {
+    background-position: 
+      15% 25%, 35% 45%, 75% 85%, /* Movimiento suave para huella1 */
+      55% 35%, 85% 65%, 25% 85%, /* Movimiento suave para huella2 */
+      45% 15%, 65% 25%, 95% 95%; /* Movimiento suave para huella3 */
+  }
+}
+
+
+
+
+/* Estilo para el botón de "Publicar" */
+.centered-btn {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.centered-btn:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para los iconos del botón */
+ion-icon {
+  margin-right: 8px;
+}
+
+/* Estilo para el formulario preliminar */
+.pet-form-preview {
+
+  margin: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.pet-form-preview ion-item {
+  margin-bottom: 10px;
+}
+
+/* Estilo para el texto informativo debajo del botón */
+.info-text {
+  text-align: center;
+  font-size: 1em;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Estilo para las mascotas recientes */
+ion-card {
+  margin: 15px;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+ion-item {
+  --background: #fff;
+}
+
+ion-avatar img {
+  border-radius: 50%;
+}
+
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la barra de navegación inferior */
+ion-footer {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+ion-segment-button {
+  --background: transparent;
+  color: #333;
+}
+
+ion-segment-button ion-icon {
+  color: #007bff;
+  font-size: 1.4em;
+}
+
+ion-segment-button ion-label {
+  font-size: 0.9em;
+  color: #333;
+}
+
+ion-segment-button:hover {
+  background-color: #f1f1f1;
+}
+
+ion-card-content  ion-list {
+  padding: 15px;
+  border-radius: 15px;
+  opacity: 0.9;
+}

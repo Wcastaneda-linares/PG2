@@ -1,0 +1,86 @@
+:root {
+  --ion-background-color: #fff; /* Fondo blanco para todo */
+  --ion-text-color: #3a3a3a; /* Color de texto oscuro para mayor contraste */
+  --ion-card-background: #fafafa; /* Fondo ligeramente gris para las tarjetas para diferenciar del fondo */
+  
+  --ion-color-primary: #3880ff; /* Azul para elementos primarios */
+  --ion-color-primary-contrast: #ffffff; /* Contraste blanco para el texto en elementos primarios */
+  
+  --ion-input-background: #ffffff; /* Fondo blanco para los inputs */
+  --ion-input-border-color: #dcdcdc; /* Borde gris para los inputs */
+  --ion-input-placeholder-color: #9a9a9a; /* Color para el placeholder del input */
+  
+  --ion-button-background: #3289db; /* Azul para los botones de acción */
+  --ion-button-background-hover: #001d91; /* Verde oscuro para el hover de botones */
+  --ion-button-text-color: #fff; /* Texto blanco para los botones */
+}
+
+/* General background */
+body {
+  background-color: var(--ion-background-color);
+}
+
+
+ion-title {
+  color: white;
+  text-align: center;
+  --background: var(--ion-color-primary);
+}
+
+/* Toolbar styling */
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+
+/* Login card */
+.login-card {
+  background-color: var(--ion-card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para la tarjeta */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px; /* Ancho máximo de la tarjeta */
+}
+
+/* Input fields styling */
+ion-input {
+  --background: var(--ion-input-background);
+  --border-color: var(--ion-input-border-color);
+  --placeholder-color: var(--ion-input-placeholder-color);
+  --border-radius: 4px; /* Bordes redondeados para los input */
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}
+
+/* Button styling */
+ion-button {
+  --background: var(--ion-button-background);
+  --background-hover: var(--ion-button-background-hover);
+  --color: var(--ion-button-text-color);
+  --border-radius: 4px; /* Bordes redondeados para los botones */
+}
+
+/* Spacing between form elements */
+ion-item:not(:last-child) {
+  margin-bottom: 10px; /* Espacio entre los elementos del formulario */
+}
+
+/* Align the register button to center */
+.centered-btn {
+  display: block;
+  width: 100%; /* Asegurarse de que ocupe el ancho total */
+  text-align: center;
+}
+
+
+
+/* Small screen adjustments */
+@media (max-width: 576px) {
+  .login-card {
+    margin: 10px;
+  }
+}
+

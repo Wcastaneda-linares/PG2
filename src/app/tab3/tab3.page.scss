@@ -1,0 +1,285 @@
+ion-header {
+  --ion-background-color: #58B0F6;
+  --ion-color-light: #fff;
+  --ion-color-dark: #000;
+}
+
+ion-toolbar {
+  --ion-color-light: #fff;
+  --ion-color-dark: #000;
+}
+
+
+ion-content {
+  --background: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-functional-dog-food-promotion-main-map-image_144794.jpg') center/cover;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+  padding: 20px;
+}
+
+ion-list.usuario {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo con un poco de transparencia */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+}
+
+ion-list.md {
+  margin: 20px 0;
+  padding: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo con un poco de transparencia */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+}
+
+.mensaje-notificacion {
+  white-space: pre-wrap; /* Respetar saltos de línea */
+  word-wrap: break-word; /* Ajustar el contenido si se desborda */
+  font-size: 14px; /* Ajusta el tamaño según tus preferencias */
+  margin-top: 8px; /* Espacio entre el mensaje y el título */
+}
+
+
+ion-item {
+  --ion-background-color: transparent; /* Sin fondo */
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea sutil en los ítems */
+}
+
+ion-label {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Un color más oscuro */
+}
+
+ion-item:last-child {
+  border-bottom: none;
+}
+
+/* Botones dentro del ion-list */
+ion-item button {
+  --background: none;
+  --ion-color-base: #58B0F6; /* Azul personalizado */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+ion-item button:hover {
+  --ion-color-base: #4A90E2; /* Color más oscuro en hover */
+}
+
+ion-item[color="danger"] {
+  --ion-color-base: #e74c3c; /* Rojo para cerrar sesión */
+  font-weight: bold;
+}
+
+ion-item[color="danger"]:hover {
+  --ion-color-base: #c0392b; /* Rojo más oscuro en hover */
+}
+
+ion-buttons {
+  padding-right: 10px; /* Más espacio a la derecha del botón de cerrar sesión */
+}
+
+ion-icon {
+  --ionicon-stroke-width: 32px; /* Hace los iconos más gruesos */
+}
+
+.container__card {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 350px;
+  height: 400px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 600ms;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card__front {
+  background: #58B0F6;
+  color: #fff;
+}
+
+.card__back {
+  transform: rotateY(180deg);
+  background: #fff;
+  color: #000;
+}
+
+.notificaciones {
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+ion-item {
+  --inner-padding-start: 16px;
+  --inner-padding-end: 16px;
+}
+
+ion-label p {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+ion-label small {
+  color: gray;
+}
+
+ion-badge {
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 24px;
+  min-height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+.usuario ion-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.usuario ion-avatar {
+  width: 75px;
+  height: 75px;
+}
+
+
+.centro-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.centro-card ion-label {
+  margin-bottom: 10px;
+  text-align: center; /* Alineación a la izquierda para mejor legibilidad */
+}
+
+.botones-container {
+  margin-top: 10px; /* Asegura que los botones estén debajo del contenido */
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+  justify-content: space-between;
+}
+
+.botones-container ion-button {
+  flex: 1; /* Hace que ambos botones tengan el mismo tamaño */
+  max-width: 48%; /* Controla el ancho máximo para mantenerlos juntos */
+}
+
+
+.usuario {
+  margin-top: 20px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+ion-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+ion-button.profile-button {
+  width: 100%; /* Para que el botón ocupe todo el ancho */
+  max-width: 300px; /* Limita el ancho máximo del botón */
+  margin: 0 auto; /* Centra el botón */
+  display: block;
+  text-align: center;
+}
+
+.huellas-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca las huellas detrás del contenido */
+  background-image: 
+    url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), /* Repetición de huella1 */
+    url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), /* Repetición de huella2 */
+    url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'); /* Repetición de huella3 */
+  
+  /* Posiciones para cada huella */
+  background-position: 
+    10% 20%, 30% 40%, 70% 80%, /* Posiciones de huella1 */
+    50% 30%, 80% 60%, 20% 80%, /* Posiciones de huella2 */
+    40% 10%, 60% 20%, 90% 90%; /* Posiciones de huella3 */
+
+  background-repeat: no-repeat;
+  
+  /* Tamaños variables para cada huella */
+  background-size: 
+    80px, 90px, 100px, /* Tamaños para huella1 */
+    70px, 80px, 90px, /* Tamaños para huella2 */
+    60px, 70px, 80px; /* Tamaños para huella3 */
+  
+  opacity: 0.4; /* Reduce la opacidad para hacerlas más sutiles */
+  animation: huellas-movimiento 20s infinite alternate;
+}
+
+@keyframes huellas-movimiento {
+  0% {
+    background-position: 
+      10% 20%, 30% 40%, 70% 80%, /* Inicial para huella1 */
+      50% 30%, 80% 60%, 20% 80%, /* Inicial para huella2 */
+      40% 10%, 60% 20%, 90% 90%; /* Inicial para huella3 */
+  }
+  100% {
+    background-position: 
+      15% 25%, 35% 45%, 75% 85%, /* Movimiento suave para huella1 */
+      55% 35%, 85% 65%, 25% 85%, /* Movimiento suave para huella2 */
+      45% 15%, 65% 25%, 95% 95%; /* Movimiento suave para huella3 */
+  }
+}
+
+
+
+

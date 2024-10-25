@@ -1,0 +1,227 @@
+/* Fondo del contenido */
+ion-content {
+  --background: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-functional-dog-food-promotion-main-map-image_144794.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100vh;
+  overflow-y: auto; /* Permitir el desplazamiento vertical */
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  gap: 15px;
+}
+
+
+/* Mensaje individual */
+ion-item {
+  background-color: #f8f9fa;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto del mensaje */
+ion-label h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 5px;
+}
+
+ion-label p {
+  font-size: 15px;
+  color: #495057;
+  margin: 5px 0;
+}
+
+/* Respuestas anidadas */
+ion-list ion-list {
+  margin-left: 20px;
+  border-left: 4px solid #58B0F6;
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Botón de responder */
+ion-button[fill='clear'] {
+  --color: #ffffff;
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+
+
+
+/* Contenedor principal del chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Asegura que el formulario siempre esté al final */
+  height: 100%;
+  gap: 15px;
+  overflow: hidden; /* Evitar que el contenido salga del contenedor */
+}
+
+/* Lista de mensajes */
+ion-list {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+/* Formulario de respuesta y nuevo mensaje */
+ion-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column; /* Cambiar a columna para colocar "Respondiendo a" arriba */
+  flex-shrink: 0; /* Evitar que se encoja */
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  margin-left: 0px;
+
+  height: auto; /* Permite que la altura sea automática según el contenido */
+  min-height: auto; /* Evita que haya un tamaño mínimo forzado */
+  max-height: none; /* Elimina cualquier limitación en el tamaño máximo */
+
+}
+
+/* Ajustes para el input y el botón de enviar */
+ion-input {
+  --placeholder-color: #888;
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  flex-grow: 1; /* Asegura que el input use todo el espacio disponible */
+}
+
+
+/* Ajustes del input de texto y botón en una fila */
+ion-card-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ajustes para que el input ocupe todo el ancho disponible */
+ion-input {
+  --placeholder-color: #888;
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Botón de enviar */
+ion-button {
+  --background: #58B0F6;
+  --color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0; /* Evitar que el botón se reduzca */
+}
+
+
+
+/* Asegura que el encabezado del ion-card esté correctamente alineado */
+ion-card-header {
+  position: relative; /* Necesario para que el botón 'cerrar' se posicione dentro del contenedor */
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Estilo para el botón de cerrar */
+.boton-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  --background: red; /* Fondo transparente */
+  --color: #ff3d00; /* Color rojo para el botón de cerrar */
+  font-size: 18px; /* Tamaño del icono */
+  --padding-start: 0;
+  --padding-end: 0;
+  padding-right: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+  top: 5px;
+}
+
+
+
+
+/* Contenido del ion-card-header */
+ion-card-header span {
+  flex-grow: 1; /* El texto toma el espacio restante */
+}
+.huellas-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca las huellas detrás del contenido */
+  background-image: 
+    url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), url('/assets/icon/huella1.png'), /* Repetición de huella1 */
+    url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), url('/assets/icon/huella2.png'), /* Repetición de huella2 */
+    url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'), url('/assets/icon/huella3.png'); /* Repetición de huella3 */
+  
+  /* Posiciones para cada huella */
+  background-position: 
+    10% 20%, 30% 40%, 70% 80%, /* Posiciones de huella1 */
+    50% 30%, 80% 60%, 20% 80%, /* Posiciones de huella2 */
+    40% 10%, 60% 20%, 90% 90%; /* Posiciones de huella3 */
+
+  background-repeat: no-repeat;
+  
+  /* Tamaños variables para cada huella */
+  background-size: 
+    80px, 90px, 100px, /* Tamaños para huella1 */
+    70px, 80px, 90px, /* Tamaños para huella2 */
+    60px, 70px, 80px; /* Tamaños para huella3 */
+  
+  opacity: 0.4; /* Reduce la opacidad para hacerlas más sutiles */
+  animation: huellas-movimiento 20s infinite alternate;
+}
+
+@keyframes huellas-movimiento {
+  0% {
+    background-position: 
+      10% 20%, 30% 40%, 70% 80%, /* Inicial para huella1 */
+      50% 30%, 80% 60%, 20% 80%, /* Inicial para huella2 */
+      40% 10%, 60% 20%, 90% 90%; /* Inicial para huella3 */
+  }
+  100% {
+    background-position: 
+      15% 25%, 35% 45%, 75% 85%, /* Movimiento suave para huella1 */
+      55% 35%, 85% 65%, 25% 85%, /* Movimiento suave para huella2 */
+      45% 15%, 65% 25%, 95% 95%; /* Movimiento suave para huella3 */
+  }
+}

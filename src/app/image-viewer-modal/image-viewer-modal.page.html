@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="form-title">Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <div class="form-container">
+    <ion-img [src]="imagenURL" alt="Imagen" class="imagen-full"></ion-img> <!-- Imagen de vista completa -->
+  </div>
+</ion-content>

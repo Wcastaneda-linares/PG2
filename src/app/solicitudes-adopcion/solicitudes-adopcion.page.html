@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Solicitudes de Adopción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="solicitudes.length > 0">
+    <ion-item *ngFor="let solicitud of solicitudes">
+      <ion-label>
+        <h2>Mascota: {{ solicitud.nombreMascota || 'Desconocido' }}</h2>
+        <p>Solicitante: {{ solicitud.nombreUsuarioSolicitante || 'Usuario desconocido' }}</p>
+        <p>Fecha: {{ solicitud.fecha?.toDate() | date: 'medium' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mensaje si no hay solicitudes -->
+  <ion-list *ngIf="solicitudes.length === 0">
+    <ion-item>
+      <ion-label>No hay solicitudes de adopción en este momento.</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

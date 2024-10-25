@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="form-title">Actualizar Centro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <form (ngSubmit)="actualizarCentro()" class="form-container">
+    <ion-list>
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Información del Centro</ion-label>
+      </ion-item-divider>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Nombre del Centro</ion-label>
+        <ion-input [(ngModel)]="nombreCentro" name="nombreCentro" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Dirección</ion-label>
+        <ion-input [(ngModel)]="direccionCentro" name="direccionCentro" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Teléfono</ion-label>
+        <ion-input [(ngModel)]="telefonoCentro" name="telefonoCentro" type="tel" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Correo Electrónico</ion-label>
+        <ion-input [(ngModel)]="correoCentro" name="correoCentro" type="email" class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Tipo de Centro</ion-label>
+      </ion-item-divider>
+      <ion-list>
+        <ion-item class="styled-item" *ngFor="let tipo of opcionesTipoCentro">
+          <ion-checkbox
+            slot="start"
+            [checked]="isChecked(tipoCentro, tipo)"
+            (ionChange)="toggleCheckbox(tipoCentro, tipo)">
+          </ion-checkbox>
+          <ion-label class="input-label">{{ tipo }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-item-divider class="section-divider">
+        <ion-label class="section-label">Servicios Ofrecidos</ion-label>
+      </ion-item-divider>
+      <ion-list>
+        <ion-item class="styled-item" *ngFor="let servicio of opcionesServicios">
+          <ion-checkbox
+            slot="start"
+            [checked]="isChecked(servicios, servicio)"
+            (ionChange)="toggleCheckbox(servicios, servicio)">
+          </ion-checkbox>
+          <ion-label class="input-label">{{ servicio }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Horario de Atención</ion-label>
+        <ion-input [(ngModel)]="horarioAtencion" name="horarioAtencion" required class="input-field"></ion-input>
+      </ion-item>
+
+      <ion-item class="styled-item">
+        <ion-label position="stacked" class="input-label">Observaciones</ion-label>
+        <ion-textarea [(ngModel)]="observaciones" name="observaciones" class="textarea-field"></ion-textarea>
+      </ion-item>
+
+      <ion-footer>
+        <ion-toolbar class="footer-toolbar">
+          <ion-button expand="full" type="submit" class="save-button">Actualizar Centro</ion-button>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-list>
+  </form>
+</ion-content>

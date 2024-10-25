@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@typescript-eslint/recommended"  // Agregado para mejorar el tipado de TypeScript
+      ],
+      "rules": {
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Page", "Component"]
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/no-input-rename": "error",  // Evita renombrar @Input en componentes
+        "@angular-eslint/no-output-native": "error",  // Evita el uso de eventos DOM nativos como @Output
+        "@angular-eslint/no-output-on-prefix": "error",  // Evita el prefijo 'on' en @Output
+        "@angular-eslint/no-inline-template": "error",  // Evita el uso de templates inline en componentes
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],  // Evita variables no usadas, ignora si empiezan con '_'
+        "@typescript-eslint/no-explicit-any": "warn",  // Evita el uso de 'any' (puedes cambiar "warn" a "error" si deseas ser más estricto)
+        "prefer-const": "error",  // Sugiere el uso de 'const' en lugar de 'let' cuando la variable no se reasigna
+        "no-console": "warn",  // Advertencia si se usa 'console.log', puedes cambiarlo a "error" si lo deseas prohibir completamente
+        "no-var": "error",  // Evita el uso de 'var', sugiere 'let' o 'const' en su lugar
+        "eqeqeq": ["error", "smart"],  // Requiere el uso de '===' y '!==', excepto en casos especiales (como comparaciones con 'null')
+        "quotes": ["error", "single", { "avoidEscape": true }]  // Enforce single quotes unless escaping
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "max-len": ["error", { "code": 140 }]  // Limita la longitud de línea en plantillas HTML a 140 caracteres
+      }
+    }
+  ]
+}

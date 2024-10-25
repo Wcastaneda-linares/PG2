@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editUserForm" (ngSubmit)="guardarCambios()">
+    <ion-item>
+      <ion-label position="stacked">Nombre de usuario</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <!-- Otros campos según necesidad -->
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button expand="block" type="submit" [disabled]="!editUserForm.valid">
+          Guardar Cambios
+        </ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>

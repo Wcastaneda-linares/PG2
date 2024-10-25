@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="paw-outline"></ion-icon> Donar Mascota
+    </ion-title>
+    <ion-text class="center-text">
+      <small>Cada mascota merece un hogar. ¡Ayúdales a encontrar el suyo!</small>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="custom-background">
+  <br>
+    <!-- Botón Publicar con Icono -->
+      <ion-button expand="full" class="centered-btn animated-button" (click)="seleccionarImagenDesdeGaleria()">Seleccionar Imagen
+      <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+    </ion-button>
+    
+  <!-- Bienvenida -->
+  <ion-card-content>
+    <ion-list>
+      <h1 class="welcome-text"><strong>¡Hola, {{usuario.name}}! Estás a un clic de hacer la diferencia en la vida de una mascota.</strong></h1>
+
+    </ion-list>
+  </ion-card-content>
+  
+
+
+ <!-- Sección de Mascotas Recientes -->
+ <!-- Sección de Mascotas Recientes -->
+  
+ <ion-card class="card-shadow">
+  <ion-card-header>
+    <ion-card-title>Mascotas Donadas Recientemente</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let mascota of mascotasRecientes">
+        <ion-avatar slot="start">
+          <img [src]="mascota.imagenURL" alt="Imagen de {{ mascota.nombre }}">
+        </ion-avatar>
+        <ion-label>
+          <h2><strong>{{ mascota.nombre }}</strong></h2>
+          
+          <!-- Icono para la edad -->
+          <p>
+            <ion-icon name="calendar-outline"></ion-icon> {{ mascota.edad }} años
+          </p>
+          
+          <!-- Icono para la raza -->
+          <p>
+            <ion-icon name="paw-outline"></ion-icon> {{ mascota.raza }}
+          </p>
+          
+          <!-- Icono para el estado -->
+          <p>
+            <ion-icon name="checkmark-circle-outline"></ion-icon> Estado: {{ mascota.estado }}
+          </p>
+          
+          <!-- Icono para el estado de salud -->
+          <p>
+            <ion-icon name="medkit-outline"></ion-icon> Salud: {{ mascota.estadoSalud }}
+          </p>
+          
+          <!-- Icono para la fecha de creación -->
+          <p>
+            <ion-icon name="time-outline"></ion-icon> Fecha de publicación: {{ mascota.fechaCreacion | date:'short' }}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+<div class="huellas-fondo"></div>
+
+</ion-content>

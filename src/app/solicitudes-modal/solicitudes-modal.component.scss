@@ -1,0 +1,70 @@
+.solitud-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  .solitud-info {
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 10px;
+      strong {
+        color: #007bff;
+      }
+    }
+  }
+  
+  ion-toolbar {
+    --background: #007bff;
+    --color: white;
+    --border-radius: 10px;
+  }
+  
+  ion-title {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  ion-button {
+    --background: #007bff;
+    --color: white;
+    --border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+  
+    &:hover {
+      --background: #0056b3;
+    }
+  }
+  
+  .no-document {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+  }
+  
+  ion-content {
+    --background: #f4f4f9;
+  }
+
+  .custom-modal-class {
+    --width: 80vw; /* Ajusta el ancho del modal */
+    --height: 80vh; /* Ajusta la altura del modal */
+    --border-radius: 12px; /* Opcional: bordes redondeados */
+    --max-width: 90vw; /* Ajusta el ancho máximo */
+    --max-height: 90vh; /* Ajusta la altura máxima */
+    --min-height: 50vh; /* Altura mínima */
+    --min-width: 50vw; /* Ancho mínimo */
+  }
+  
+  .botones-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    padding-top: 10px; /* Espaciado opcional arriba */
+  }
+  
+  

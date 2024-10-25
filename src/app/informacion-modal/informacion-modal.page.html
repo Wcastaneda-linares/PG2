@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información de la Publicación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Descripción</ion-label>
+      <ion-note slot="end">{{ publicacion.descripcion }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Número de Contacto</ion-label>
+      <ion-note slot="end">{{ publicacion.numeroContacto }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Correo Electrónico</ion-label>
+      <ion-note slot="end">{{ publicacion.correo }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dirección</ion-label>
+      <ion-note slot="end">{{ publicacion.direccion }}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

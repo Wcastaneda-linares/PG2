@@ -1,0 +1,3 @@
+Resumen de Escaneo de Seguridad
+========================================
+Vulnerabilidad: Issue: - Cantidad: 251
